@@ -25,11 +25,20 @@ export  class VotingChartComponent implements OnInit {
     constructor(private _voting: VotingApiService) {}
   
     ngOnInit() {
+      /**
+      this._voting.latestMeetings().subscribe(res => {
+        let votingSessions = res.VotingSessions;
+        let descriptions = votingSessions.map(votingSessions => votingSessions.Text).filter(n=>n);
+        let votingIDs = votingSessions.map(votingSessions => votingSessions.Session_ID).filter(n=>n);
+        let timeStamps = votingSessions.map(votingSessions => votingSessions.Timestamp).filter(n=>n);
+       
+      })  */
       this._voting.votingSummary("43734").subscribe(res => {
         let votes = res.Votes;
 
         console.log("ok");
-  
+        
+        /**this needs to be changed in the next electoral term */
         let OLANO = parse_votes(votes.slice(0,52));		
         let SMERSD = parse_votes(votes.slice(53, 90));
         let WAF = parse_votes(votes.slice(91,107));

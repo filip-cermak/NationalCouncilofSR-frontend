@@ -11,4 +11,7 @@ export class VotingApiService {
   votingSummary(Voting_Session) {
     return this._http.get("https://nationalcouncilofsr-api.appspot.com/voting/".concat(Voting_Session));
 }
+  latestMeetings(){
+    return this._http.get("https://nationalcouncilofsr-api.appspot.com/meetings/")
+  }
 }
