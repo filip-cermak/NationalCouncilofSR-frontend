@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-voting-card',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VotingCardComponent implements OnInit {
 
+  @Input() votingID : string;
+  @Input() description : string;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.description);
+    console.log(this.votingID);
   }
 
 }

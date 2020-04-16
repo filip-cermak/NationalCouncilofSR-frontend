@@ -11,7 +11,6 @@ export class VotingListComponent implements OnInit {
   descriptions;
   votingIDs;
   timeStamps;
-  
   constructor(private _voting: VotingApiService) { }
 
   ngOnInit(): void {

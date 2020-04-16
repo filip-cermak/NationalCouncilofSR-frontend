@@ -9,6 +9,7 @@ import { VotingApiService } from './voting-api.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { VotingListComponent } from './voting-list/voting-list.component';
 import { VotingCardComponent } from './voting-card/voting-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VotingCardComponent } from './voting-card/voting-card.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [VotingApiService],
   bootstrap: [AppComponent]
