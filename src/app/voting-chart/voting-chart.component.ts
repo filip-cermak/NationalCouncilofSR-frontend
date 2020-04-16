@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Input, ElementRef } from '@angular/core';
 import {VotingApiService} from '../voting-api.service';
 import { Chart } from 'chart.js';
 
@@ -6,34 +6,34 @@ import { Chart } from 'chart.js';
   selector: 'app-voting-chart',
   templateUrl: './voting-chart.component.html',
   styleUrls: ['./voting-chart.component.css'],
-  template: `<div>: {{name}}</div>`,
-  styles: [`
-  :host {
-    display: block;
-    padding: 1px;
-    border: 1px solid black;
-    border-radius: 7px;
-  }
-  `]
 })
 
 
 export  class VotingChartComponent implements OnInit {
     chart = []; // This will hold our chart info
     votes = [];
-  
+
+    @Input()
+    votingID: string;
+
+    @ViewChild('myCanvas') myCanvas: ElementRef;
+    public context: CanvasRenderingContext2D;
+
     constructor(private _voting: VotingApiService) {}
-  
-    ngOnInit() {
+    ngOnInit(){}
+
+    ngAfterViewInit() {
+      this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
+      console.log(this.context)
       /**
       this._voting.latestMeetings().subscribe(res => {
         let votingSessions = res.VotingSessions;
         let descriptions = votingSessions.map(votingSessions => votingSessions.Text).filter(n=>n);
         let votingIDs = votingSessions.map(votingSessions => votingSessions.Session_ID).filter(n=>n);
         let timeStamps = votingSessions.map(votingSessions => votingSessions.Timestamp).filter(n=>n);
-       
       })  */
-      this._voting.votingSummary("43734").subscribe(res => {
+
+      this._voting.votingSummary(this.votingID).subscribe(res => {
         let votes = res.Votes;
 
         console.log("ok");
@@ -46,7 +46,7 @@ export  class VotingChartComponent implements OnInit {
         let SAS = parse_votes(votes.slice(125, 137));
         let FP = parse_votes(votes.slice(138,149));
   
-        this.chart = new Chart('canvas', {
+        this.chart = new Chart(this.context, {
           type: 'bar',
           data : {
           labels : ['For', 'Against', 'Abstention', 'Not Present'],
