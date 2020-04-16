@@ -25,13 +25,6 @@ export  class VotingChartComponent implements OnInit {
     ngAfterViewInit() {
       this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
       console.log(this.context)
-      /**
-      this._voting.latestMeetings().subscribe(res => {
-        let votingSessions = res.VotingSessions;
-        let descriptions = votingSessions.map(votingSessions => votingSessions.Text).filter(n=>n);
-        let votingIDs = votingSessions.map(votingSessions => votingSessions.Session_ID).filter(n=>n);
-        let timeStamps = votingSessions.map(votingSessions => votingSessions.Timestamp).filter(n=>n);
-      })  */
 
       this._voting.votingSummary(this.votingID).subscribe(res => {
         let votes = res.Votes;

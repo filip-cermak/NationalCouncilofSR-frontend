@@ -7,11 +7,15 @@ import { VotingChartComponent } from './voting-chart/voting-chart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VotingApiService } from './voting-api.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { VotingListComponent } from './voting-list/voting-list.component';
+import { VotingCardComponent } from './voting-card/voting-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VotingChartComponent
+    VotingChartComponent,
+    VotingListComponent,
+    VotingCardComponent,
   ],
   imports: [
     BrowserModule,
