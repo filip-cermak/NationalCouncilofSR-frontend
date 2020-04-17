@@ -1,4 +1,17 @@
-<div *ngFor= "let description of descriptions; let i = index;">
-    <h3>{{descriptions[i]}}</h3>
-    <h1><app-voting-chart [votingID] = "votingIDs[i]" ></app-voting-chart></h1>
+<div 
+fxLayout="row wrap" 
+fxLayout.lt-sm="column" 
+fxLayoutGap="32px" 
+fxLayoutAlign="flex-start">
+<ng-container *ngFor= "let description of descriptions; let i = index;">
+    <app-voting-card [votingID]= "votingIDs[i]" [description] = "descriptions[i]"> </app-voting-card>
+</ng-container>
 </div>
+<!--
+<div>
+<ng-container *ngFor= "let description of descriptions; let i = index;">
+    {{descriptions[i]}}
+    <app-voting-chart [votingID] = "votingIDs[i]" ></app-voting-chart>
+</ng-container>
+</div>
+-->

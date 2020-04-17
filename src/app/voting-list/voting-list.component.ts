@@ -15,7 +15,7 @@ export class VotingListComponent implements OnInit {
 
   ngOnInit(): void {
     this._voting.latestMeetings().subscribe(res => {
-      let votingSessions = res.VotingSessions;
+      let votingSessions = res["VotingSessions"];
       let descriptions = votingSessions.map(votingSessions => votingSessions.Text).filter(n=>n);
       let votingIDs = votingSessions.map(votingSessions => votingSessions.Session_ID).filter(n=>n);
       let timeStamps = votingSessions.map(votingSessions => votingSessions.Timestamp).filter(n=>n);

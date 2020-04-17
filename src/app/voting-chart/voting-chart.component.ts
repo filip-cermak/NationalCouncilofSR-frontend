@@ -8,7 +8,6 @@ import { Chart } from 'chart.js';
   styleUrls: ['./voting-chart.component.css'],
 })
 
-
 export  class VotingChartComponent implements OnInit {
     chart = []; // This will hold our chart info
     votes = [];
@@ -26,7 +25,7 @@ export  class VotingChartComponent implements OnInit {
       this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
 
       this._voting.votingSummary(this.votingID).subscribe(res => {
-        let votes = res.Votes;
+        let votes = res["Votes"];
 
         console.log("ok");
         
