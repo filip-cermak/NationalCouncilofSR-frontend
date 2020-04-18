@@ -1,6 +1,6 @@
 .header {
     padding: 20px;
-    text-align: justify;
+    text-align: left;
     background: #3b2c4f;
     color: white;
     font-size: 30px;
@@ -8,4 +8,8 @@
 
   a {
     color: white;
+  }
+
+  p {
+    font-size: 20px;
   }
