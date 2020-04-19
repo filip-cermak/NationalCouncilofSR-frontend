@@ -1,4 +1,5 @@
 TODO:
+build CI/CD pipline from github
 deploy to Azure
 add share buttons for graph download
 add facebook and twitter bots for sharing - so that politicians/basic people can comment
