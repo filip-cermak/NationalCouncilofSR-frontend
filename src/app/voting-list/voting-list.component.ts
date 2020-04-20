@@ -23,8 +23,6 @@ export class VotingListComponent implements OnInit {
       this.descriptions = descriptions;
       this.votingIDs = votingIDs;
       this.timeStamps = timeStamps;
-
-      console.log(this.descriptions)
     
     })
   }

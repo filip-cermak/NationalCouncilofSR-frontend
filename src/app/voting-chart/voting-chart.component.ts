@@ -26,17 +26,15 @@ export  class VotingChartComponent implements OnInit {
 
       this._voting.votingSummary(this.votingID).subscribe(res => {
         let votes = res["Votes"];
-
-        console.log("ok");
         
         /**this needs to be changed in the next electoral term */
-        let OLANO = parse_votes(votes.slice(0,52));		
-        let SMERSD = parse_votes(votes.slice(53, 90));
-        let WAF = parse_votes(votes.slice(91,107));
-        let LSNS = parse_votes(votes.slice(108, 124));
-        let SAS = parse_votes(votes.slice(125, 137));
-        let FP = parse_votes(votes.slice(138,149));
-  
+        let OLANO = parse_votes(votes.slice(0,53));	
+        let SMERSD = parse_votes(votes.slice(53, 91));
+        let WAF = parse_votes(votes.slice(91,108));
+        let LSNS = parse_votes(votes.slice(108, 125));
+        let SAS = parse_votes(votes.slice(125, 138));
+        let FP = parse_votes(votes.slice(138));
+        
         this.chart = new Chart(this.context, {
           type: 'bar',
           data : {
@@ -76,13 +74,13 @@ export  class VotingChartComponent implements OnInit {
     count the occurances of votes ('Z','P','?','N') in the input list and output summary
     */
     let out: number[] = [0, 0, 0, 0];
-  
+
     for(let vote of votes){
       if (vote == 'Z'){
       out[0]++;
       } else if (vote == 'P'){
       out[1]++;
-      } else if (vote == '?' || vote == 'N'){
+      } else if (vote == '?' || vote == 'N' || vote == '-'){
       out[2]++;
       } else if (vote == '0') {
       out[3]++;

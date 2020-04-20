@@ -14,8 +14,6 @@ export class VotingCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.description);
-    console.log(this.votingID);
   }
 
 }
