@@ -1,7 +1,8 @@
 <mat-card class="example-card"  >
     <mat-card-content appMaterialElevation defaultElevation="8" raisedElevation="16">
         <app-voting-chart [votingID] = "votingID" ></app-voting-chart>
-        {{description}}
+        <p>{{description}} Viac na <a href="https://www.nrsr.sk/web/Default.aspx?sid=schodze/hlasovanie/hlasklub&ID={{votingID}}">oficálnej stránke</a> Národnej Rady Slovenskej Republiky.</p>
+
     </mat-card-content>
     <mat-card-actions>
       <!--<button mat-raised-button color=#3b2c4f>SHARE</button> -->
