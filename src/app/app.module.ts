@@ -15,6 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { VotingChartDetailComponent } from './voting-chart-detail/voting-chart-detail.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import {MatButtonModule} from '@angular/material/button';
     VotingCardComponent,
     HeaderComponent,
     FooterComponent,
+    VotingChartDetailComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,6 @@ import {MatButtonModule} from '@angular/material/button';
     MatButtonModule,
   ],
   providers: [VotingApiService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
