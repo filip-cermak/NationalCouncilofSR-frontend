@@ -1,2 +1,5 @@
 <app-voting-chart [votingID] = "chartID" ></app-voting-chart>
-<img src="{{img}}"/>
+<button (click)="onClickMe()">Click for Download!</button>
+<div *ngIf="flag">
+    <a href="{{url}}" download = {{chartID}}>Chart Download</a>
+</div>

@@ -11,20 +11,20 @@ export class VotingChartDetailComponent implements OnInit {
   
   chartID
   img
+  url
+  flag = false
 
   constructor(public route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.chartID = params.get('chartID');
-    });
+
+  onClickMe() {
+    this.flag = true;
+    this.url = document.getElementsByTagName("canvas").item(0).toDataURL("image/jpg");
   }
 
-  ngAfterViewInit() : void {
-    var canvas = document.getElementsByTagName("canvas").item(0);
-    console.log(canvas)
-    canvas.toBlob(function(blob) {
-      saveAs(blob, "pretty image.png");
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.chartID =  params.get('chartID');
     });
   }
 }
