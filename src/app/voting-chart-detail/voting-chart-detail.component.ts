@@ -26,5 +26,5 @@ export class VotingChartDetailComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.chartID =  params.get('chartID');
     });
-  }
+}
 }
