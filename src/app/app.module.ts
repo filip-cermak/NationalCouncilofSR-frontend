@@ -17,6 +17,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { VotingChartDetailComponent } from './voting-chart-detail/voting-chart-detail.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { VotingChartExportComponent } from './voting-chart-export/voting-chart-export.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     FooterComponent,
     VotingChartDetailComponent,
     HomepageComponent,
+    VotingChartExportComponent,
   ],
   imports: [
     BrowserModule,
