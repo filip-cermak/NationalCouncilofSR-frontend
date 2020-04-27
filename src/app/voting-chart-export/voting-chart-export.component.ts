@@ -3,14 +3,14 @@ import {VotingApiService} from '../voting-api.service';
 import { Chart } from 'chart.js';
 
 @Component({
-  selector: 'app-voting-chart',
-  templateUrl: './voting-chart.component.html',
-  styleUrls: ['./voting-chart.component.css'],
+  selector: 'app-voting-chart-export',
+  templateUrl: './voting-chart-export.component.html',
+  styleUrls: ['./voting-chart-export.component.css'],
 })
-
 export  class VotingChartExportComponent implements OnInit {
     chart = []; // This will hold our chart info
     votes = [];
+    url;
 
     @Input()
     votingID: string;
@@ -56,6 +56,12 @@ export  class VotingChartExportComponent implements OnInit {
             intersect: false
           },
           responsive: true,
+          animations: {
+            onComplete : function(){
+              console.log(this.url);
+              console.log("hello world")
+            }
+          },
           scales: {
             xAxes: [{
               stacked: true,

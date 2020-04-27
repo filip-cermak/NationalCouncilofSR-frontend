@@ -1,4 +1,4 @@
-<app-voting-chart [votingID] = "chartID" ></app-voting-chart>
+<app-voting-chart-export [votingID] = "chartID" ></app-voting-chart-export>
 <button (click)="onClickMe()">Click for Download!</button>
 <div *ngIf="flag">
     <a href="{{url}}" download = {{chartID}}>Chart Download</a>
